@@ -39,7 +39,7 @@ CREATE TABLE `admin` (
 --
 
 INSERT INTO `admin` (`id`, `username`, `password`, `updationDate`) VALUES
-(1, 'admin', 'Test@12345', '28-12-2016 11:42:05 AM');
+(1, 'admin', 'Test@12345', '28-3-2022 11:42:05 AM');
 
 -- --------------------------------------------------------
 
@@ -66,11 +66,11 @@ CREATE TABLE `appointment` (
 --
 
 INSERT INTO `appointment` (`id`, `doctorSpecialization`, `doctorId`, `userId`, `consultancyFees`, `appointmentDate`, `appointmentTime`, `postingDate`, `userStatus`, `doctorStatus`, `updationDate`) VALUES
-(3, 'Demo test', 7, 6, 600, '2019-06-29', '9:15 AM', '2019-06-23 18:31:28', 1, 0, '0000-00-00 00:00:00'),
-(4, 'Ayurveda', 5, 5, 8050, '2019-11-08', '1:00 PM', '2019-11-05 10:28:54', 1, 1, '0000-00-00 00:00:00'),
-(5, 'Dermatologist', 9, 7, 500, '2019-11-30', '5:30 PM', '2019-11-10 18:41:34', 1, 0, '2019-11-10 18:48:30'),
-(6, 'Physician', 11, 2, 2000, '2020-07-14', '10:15 AM', '2020-07-05 02:12:37', 1, 1, NULL),
-(7, 'General Physician', 3, 2, 1200, '2020-07-05', '10:15 AM', '2020-07-05 02:14:49', 1, 1, NULL);
+(3, 'Dentist', 7, 6, 600, '2022-02-23', '9:15 AM', '2022-02-23 18:31:28', 1, 0, '0000-00-00 00:00:00'),
+(4, 'Homeopath', 5, 5, 8050, '2022-03-05', '1:00 PM', '2022-03-05 10:28:54', 1, 1, '0000-00-00 00:00:00'),
+(5, 'General Physician', 9, 7, 500, '2022-01-10', '5:30 PM', '2022-01-10 18:41:34', 1, 0, '2019-11-10 18:48:30'),
+(6, 'Ayurveda', 11, 2, 2000, '2022-02-05', '10:15 AM', '2022-02-05 02:12:37', 1, 1, NULL),
+(7, 'General Physician', 3, 2, 1200, '2022-01-05', '10:15 AM', '2022-01-05 02:14:49', 1, 1, NULL);
 
 -- --------------------------------------------------------
 
@@ -96,15 +96,15 @@ CREATE TABLE `doctors` (
 --
 
 INSERT INTO `doctors` (`id`, `specilization`, `doctorName`, `address`, `docFees`, `contactno`, `docEmail`, `password`, `creationDate`, `updationDate`) VALUES
-(1, 'Dentist', 'Lyndon Bermoy', 'New Delhi', '500', 8285703354, 'anuj.lpu1@gmail.com', 'f925916e2754e5e03f75dd58a5733251', '2016-12-29 06:25:37', '2020-07-05 01:53:19'),
-(2, 'Homeopath', 'Sarita Pandey', 'Varanasi', '600', 2147483647, 'sarita@gmail.com', 'f925916e2754e5e03f75dd58a5733251', '2016-12-29 06:51:51', '0000-00-00 00:00:00'),
-(3, 'General Physician', 'Nitesh Kumar', 'Ghaziabad', '1200', 8523699999, 'nitesh@gmail.com', 'f925916e2754e5e03f75dd58a5733251', '2017-01-07 07:43:35', '0000-00-00 00:00:00'),
-(4, 'Homeopath', 'Vijay Verma', 'New Delhi', '700', 25668888, 'vijay@gmail.com', 'f925916e2754e5e03f75dd58a5733251', '2017-01-07 07:45:09', '0000-00-00 00:00:00'),
-(5, 'Ayurveda', 'Sanjeev', 'Gurugram', '8050', 442166644646, 'sanjeev@gmail.com', 'f925916e2754e5e03f75dd58a5733251', '2017-01-07 07:47:07', '0000-00-00 00:00:00'),
-(6, 'General Physician', 'Amrita', 'New Delhi India', '2500', 45497964, 'amrita@test.com', 'f925916e2754e5e03f75dd58a5733251', '2017-01-07 07:52:50', '0000-00-00 00:00:00'),
-(7, 'Demo test', 'abc ', 'New Delhi India', '200', 852888888, 'test@demo.com', 'f925916e2754e5e03f75dd58a5733251', '2017-01-07 08:08:58', '2019-06-23 18:17:25'),
-(8, 'Ayurveda', 'Test Doctor', 'Xyz Abc New Delhi', '600', 1234567890, 'test@test.com', '202cb962ac59075b964b07152d234b70', '2019-06-23 17:57:43', '2019-06-23 18:06:06'),
-(11, 'Physician', 'Jonah Juarez', 'Surigao Philippines', '2000', 123456789, 'jjuarez@gmail.com', '25f9e794323b453885f5181f1b624d0b', '2020-07-05 02:06:00', '2020-07-05 02:06:48');
+(1, 'Dentist', 'Lyndon Bermoy', 'New Delhi', '500', 8285703354, 'Lyndon@gmail.com', 'f925916e2754e5e03f75dd58a5733251', '2022-4-1 06:25:25', NULL),
+(2, 'Homeopath', 'Sarita Pandey', 'Varanasi', '600', 2147483647, 'sarita@gmail.com', 'f925916e2754e5e03f75dd58a5733251', '2022-4-1 06:25:25', NULL),
+(3, 'General Physician', 'Nitesh Kumar', 'Ghaziabad', '1200', 8523699999, 'nitesh@gmail.com', 'f925916e2754e5e03f75dd58a5733251', '2022-4-1 06:25:25', NULL),
+(4, 'Homeopath', 'Vijay Verma', 'New Delhi', '700', 25668888, 'vijay@gmail.com', 'f925916e2754e5e03f75dd58a5733251', '2022-4-1 06:25:25', NULL),
+(5, 'Ayurveda', 'Sanjeev', 'Gurugram', '8050', 442166644646, 'sanjeev@gmail.com', 'f925916e2754e5e03f75dd58a5733251', '2022-4-1 06:25:25', NULL),
+(6, 'General Physician', 'Amrita', 'New Delhi India', '2500', 45497964, 'amrita@test.com', 'f925916e2754e5e03f75dd58a5733251', '2022-4-1 06:25:25', NULL),
+(7, 'Cardiologists', 'abc ', 'New Delhi India', '200', 852888888, 'test@demo.com', 'f925916e2754e5e03f75dd58a5733251', '2022-4-1 06:25:25', NULL),
+(8, 'Ayurveda', 'Test Doctor', 'Xyz Abc New Delhi', '600', 1234567890, 'test@test.com', '202cb962ac59075b964b07152d234b70', '2022-4-1 06:25:25', NULL),
+(11, 'General Physician', 'Jonah Juarez', 'Surigao Philippines', '2000', 123456789, 'jjuarez@gmail.com', '25f9e794323b453885f5181f1b624d0b', '2022-4-1 06:25:25', NULL);
 
 -- --------------------------------------------------------
 
@@ -128,14 +128,14 @@ CREATE TABLE `doctorslog` (
 
 INSERT INTO `doctorslog` (`id`, `uid`, `username`, `userip`, `loginTime`, `logout`, `status`) VALUES
 (20, 7, 'test@demo.com', 0x3a3a3100000000000000000000000000, '2020-07-05 01:50:01', NULL, 1),
-(21, NULL, 'juarez@gmail.com', 0x3a3a3100000000000000000000000000, '2020-07-05 02:02:51', NULL, 0),
-(22, NULL, 'juarez@gmail.com', 0x3a3a3100000000000000000000000000, '2020-07-05 02:03:03', NULL, 0),
-(23, NULL, 'jjuarez@gmail.com', 0x3a3a3100000000000000000000000000, '2020-07-05 02:04:02', NULL, 0),
-(24, NULL, 'jjuarez@gmail.com', 0x3a3a3100000000000000000000000000, '2020-07-05 02:04:38', NULL, 0),
-(25, 11, 'jjuarez@gmail.com', 0x3a3a3100000000000000000000000000, '2020-07-05 02:06:19', NULL, 1),
-(26, 11, 'jjuarez@gmail.com', 0x3a3a3100000000000000000000000000, '2020-07-05 02:06:38', NULL, 1),
-(27, 11, 'jjuarez@gmail.com', 0x3a3a3100000000000000000000000000, '2020-07-05 02:08:18', NULL, 1),
-(28, 11, 'jjuarez@gmail.com', 0x3a3a3100000000000000000000000000, '2020-07-05 02:15:25', NULL, 1);
+(21, NULL, 'juarez@gmail.com', 0x3a3a3100000000000000000000000000, '2022-03-05 02:02:51', NULL, 0),
+(22, NULL, 'juarez@gmail.com', 0x3a3a3100000000000000000000000000, '2022-03-05 02:03:03', NULL, 0),
+(23, NULL, 'jjuarez@gmail.com', 0x3a3a3100000000000000000000000000, '2022-03-05 02:04:02', NULL, 0),
+(24, NULL, 'jjuarez@gmail.com', 0x3a3a3100000000000000000000000000, '2022-03-05 02:04:38', NULL, 0),
+(25, 11, 'jjuarez@gmail.com', 0x3a3a3100000000000000000000000000, '2022-03-05 02:06:19', NULL, 1),
+(26, 11, 'jjuarez@gmail.com', 0x3a3a3100000000000000000000000000, '2022-03-05 02:06:38', NULL, 1),
+(27, 11, 'jjuarez@gmail.com', 0x3a3a3100000000000000000000000000, '2022-03-05 02:08:18', NULL, 1),
+(28, 11, 'jjuarez@gmail.com', 0x3a3a3100000000000000000000000000, '2022-03-05 02:15:25', NULL, 1);
 
 -- --------------------------------------------------------
 
@@ -155,18 +155,17 @@ CREATE TABLE `doctorspecilization` (
 --
 
 INSERT INTO `doctorspecilization` (`id`, `specilization`, `creationDate`, `updationDate`) VALUES
-(1, 'Gynecologist/Obstetrician', '2016-12-28 06:37:25', '0000-00-00 00:00:00'),
-(2, 'General Physician', '2016-12-28 06:38:12', '0000-00-00 00:00:00'),
-(3, 'Dermatologist', '2016-12-28 06:38:48', '0000-00-00 00:00:00'),
-(4, 'Homeopath', '2016-12-28 06:39:26', '0000-00-00 00:00:00'),
-(5, 'Ayurveda', '2016-12-28 06:39:51', '0000-00-00 00:00:00'),
-(6, 'Dentist', '2016-12-28 06:40:08', '0000-00-00 00:00:00'),
-(7, 'Ear-Nose-Throat (Ent) Specialist', '2016-12-28 06:41:18', '0000-00-00 00:00:00'),
-(9, 'Demo test', '2016-12-28 07:37:39', '0000-00-00 00:00:00'),
-(10, 'Bones Specialist demo', '2017-01-07 08:07:53', '0000-00-00 00:00:00'),
-(11, 'Test', '2019-06-23 17:51:06', '2019-06-23 17:55:06'),
-(12, 'Dermatologist', '2019-11-10 18:36:36', '2019-11-10 18:36:50'),
-(13, 'Physician', '2020-07-05 01:59:00', NULL);
+(1, 'Gynecologist/Obstetrician', '2022-4-1 06:25:25', NULL),
+(2, 'General Physician', '2022-4-1 06:25:25', NULL),
+(3, 'Dermatologist', '2022-4-1 06:25:25', NULL),
+(4, 'Homeopath', '2022-4-1 06:25:25', NULL),
+(5, 'Ayurveda', '2022-4-1 06:25:25', NULL),
+(6, 'Dentist', '2022-4-1 06:25:25', NULL),
+(7, 'Ear-Nose-Throat (Ent) Specialist', '2022-4-1 06:25:25', NULL),
+(9, 'Cardiologists', '2022-4-1 06:25:25', NULL),
+(10, 'Bones Specialist demo', '2022-4-1 06:25:25', NULL),
+(11, 'Dermatologist', '2019-11-10 18:36:36', NULL),
+(12, 'Physician', '2020-07-05 01:59:00', NULL);
 
 -- --------------------------------------------------------
 
@@ -308,6 +307,50 @@ CREATE TABLE `users` (
 INSERT INTO `users` (`id`, `fullName`, `address`, `city`, `gender`, `email`, `password`, `regDate`, `updationDate`) VALUES
 (2, 'Demo User', 'Manila, Philippines', 'Delhi', 'female', 'test@gmail.com', 'f925916e2754e5e03f75dd58a5733251', '2016-12-30 05:34:39', '2020-07-05 01:55:24');
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `staff`
+--
+
+CREATE TABLE `staff` (
+  `id` int(11) NOT NULL,
+  `staffRole` varchar(255) DEFAULT NULL,
+  `staffName` varchar(255) DEFAULT NULL,
+  `address` longtext DEFAULT NULL,
+  `salary` varchar(255) DEFAULT NULL,
+  `contactno` bigint(11) DEFAULT NULL,
+  `staffEmail` varchar(255) DEFAULT NULL,
+  `password` varchar(255) DEFAULT NULL,
+  `creationDate` timestamp NULL DEFAULT current_timestamp(),
+  `updationDate` timestamp NULL DEFAULT NULL ON UPDATE current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `doctorspecilization`
+--
+
+CREATE TABLE `staffspecilization` (
+  `id` int(11) NOT NULL,
+  `specilization` varchar(255) DEFAULT NULL,
+  `creationDate` timestamp NULL DEFAULT current_timestamp(),
+  `updationDate` timestamp NULL DEFAULT NULL ON UPDATE current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `staffspecilization`
+--
+
+INSERT INTO `staffspecilization` (`id`, `specilization`, `creationDate`, `updationDate`) VALUES
+(1, 'Nurse', '2022-4-1 06:25:25', '0000-00-00 00:00:00'),
+(2, 'Clinical assistants', '2022-4-1 06:25:25', NULL),
+(3, 'Pharmacists', '2022-4-1 06:25:25', NULL),
+(4, 'Lab Technician', '2022-4-1 06:25:25', NULL);
+
+-- --------------------------------------------------------
 --
 -- Indexes for dumped tables
 --
@@ -374,6 +417,18 @@ ALTER TABLE `users`
   ADD KEY `email` (`email`);
 
 --
+-- Indexes for table `staff`
+--
+ALTER TABLE `staff`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `staffspecilization`
+--
+ALTER TABLE `staffspecilization`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -405,7 +460,7 @@ ALTER TABLE `doctorslog`
 -- AUTO_INCREMENT for table `doctorspecilization`
 --
 ALTER TABLE `doctorspecilization`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `tblcontactus`
@@ -437,6 +492,18 @@ ALTER TABLE `userlog`
 ALTER TABLE `users`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 COMMIT;
+--
+-- AUTO_INCREMENT for table `staff`
+--
+ALTER TABLE `staff`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
+
+--
+-- AUTO_INCREMENT for table `staffspecilization`
+--
+ALTER TABLE `staffspecilization`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

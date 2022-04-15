@@ -190,7 +190,7 @@ $pdf->SetTitle('Hospital Report');
 $pdf->SetSubject('E-HEALTH CARE SYSTEM');
 
 // set default header data
-$pdf->SetHeaderData(PDF_HEADER_LOGO, PDF_HEADER_LOGO_WIDTH, "E-HEALTH CARE SYSTEM".'', "Developed by 19BCE0202 19BCE2203 19BCI0245 19BCI0195 19BCI0214 19BCE2239", array(0,64,255), array(0,64,128));
+$pdf->SetHeaderData(PDF_HEADER_LOGO, PDF_HEADER_LOGO_WIDTH, "E-HEALTH CARE SYSTEM".'', "Developed by 19BCE2680 19BCE0276 18BCI0221", array(0,64,255), array(0,64,128));
 $pdf->setFooterData(array(0,64,0), array(0,64,128));
 
 // set header and footer fonts

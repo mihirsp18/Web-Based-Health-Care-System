@@ -7,7 +7,7 @@ check_login();
 if(isset($_POST['submit']))
   {
     
-    $vid=$_GET['viewid'];
+    $vid=$_GET['vID'];
     $bp=$_POST['bp'];
     $bs=$_POST['bs'];
     $weight=$_POST['weight'];
@@ -16,7 +16,7 @@ if(isset($_POST['submit']))
     $nvd=$_POST['nvd'];
    
  
-      $query.=mysqli_query($con, "insert   tblmedicalhistory(PatientID,BloodPressure,BloodSugar,Weight,Temperature,MedicalPres,Next_Visit_Date)value('$vid','$bp','$bs','$weight','$temp','$pres','$nvd')");
+      $query.=mysqli_query($con, "insert into tblmedicalhistory(PatientID,BloodPressure,BloodSugar,Weight,Temperature,MedicalPres,Next_Visit_Date)value('$vid','$bp','$bs','$weight','$temp','$pres','$nvd')");
     if ($query) {
     echo '<script>alert("Medicle history has been added.")</script>';
     echo "<script>window.location.href ='manage-patient.php'</script>";
@@ -24,6 +24,7 @@ if(isset($_POST['submit']))
   else
     {
       echo '<script>alert("Something Went Wrong. Please try again")</script>';
+      echo '<script>alert( $vid )</script>';
     }
 
   
@@ -175,13 +176,14 @@ while ($row=mysqli_fetch_array($ret)) {
                                                 <table class="table table-bordered table-hover data-tables">
 
                                  <form method="post" name="submit">
-
-      <tr>
+  
+         <input type="hidden" name="vID" value= "<?php echo $vid ?>" />
+  <tr>
     <th>Blood Pressure :</th>
     <td>
     <input name="bp" placeholder="Blood Pressure" class="form-control wd-450" required="true"></td>
   </tr>                          
-     <tr>
+  <tr>
     <th>Blood Sugar :</th>
     <td>
     <input name="bs" placeholder="Blood Sugar" class="form-control wd-450" required="true"></td>

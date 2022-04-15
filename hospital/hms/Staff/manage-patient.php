@@ -72,7 +72,7 @@ $data=mysqli_fetch_array($sql);
 <tbody>
 <?php
 $docid=$_SESSION['id'];
-$sql=mysqli_query($con,"select * from tblpatient where Docid='$docid' ");
+$sql=mysqli_query($con,"select * from tblpatient ");
 $cnt=1;
 while($row=mysqli_fetch_array($sql))
 {

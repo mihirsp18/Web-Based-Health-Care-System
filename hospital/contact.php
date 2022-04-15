@@ -58,7 +58,7 @@ echo "<script>window.location.href ='contact.php'</script>";
 						   		<p>India</p>
 				   		<p>Phone:(00) 222 666 444</p>
 				   		<p>Fax: (000) 000 00 00 0</p>
-				 	 	<p>Email: <span>Team3@vitstudent.ac.in</span></p>
+				 	 	<p>Email: <span>seproject@vitstudent.ac.in</span></p>
 				   	
 				   </div>
 				</div>				

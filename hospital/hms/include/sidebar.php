@@ -79,12 +79,12 @@
 								</a>
 							</li>
 							<?php
-							$uid=$_SESSION['id'];
-$sql_get=mysqli_query($con,"select PatientID,PatientName,PatientEmail,Docid,MedicalPres,Next_Visit_Date from notifications join users on users.email=notifications.PatientEmail where users.id='$uid'");
-             $count=mysqli_num_rows($sql_get);
+// 							$uid=$_SESSION['id'];
+// $sql_get=mysqli_query($con,"select PatientID,PatientName,PatientEmail,Docid,MedicalPres,Next_Visit_Date from notifications join users on users.email=notifications.PatientEmail where users.id='$uid'");
+//              $count=mysqli_num_rows($sql_get);
 							?>
 <li>
-								<a href="notification.php">
+								<!-- <a href="notification.php">
 									<div class="item-content" style="background-color:#00695C;">
 										<div class="item-media">
 											<i class="ti-bell"></i> <span class="badge bg-danger" id="count"><?php echo $count; ?></span>
@@ -93,7 +93,7 @@ $sql_get=mysqli_query($con,"select PatientID,PatientName,PatientEmail,Docid,Medi
 											<span class="title"> <font color="white" >Notifications </font></span>
 										</div>
 									</div>
-								</a>
+								</a> -->
 							</li>
 						</ul>
 						<!-- end: CORE FEATURES -->
