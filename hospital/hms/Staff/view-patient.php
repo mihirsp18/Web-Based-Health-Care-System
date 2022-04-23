@@ -16,8 +16,13 @@ if(isset($_POST['submit']))
     $test_results=$_POST['test_results'];
    
  
-      $query.=mysqli_query($con, "insert   tblmedicalhistory(PatientID,BloodPressure,BloodSugar,Weight,Temperature,test_details,test_results)value('$vid','$bp','$bs','$weight','$temp','$test_details','$test_results')");
-    if ($query) {
+      $query.=mysqli_query($con, "insert into tblmedicalhistory(PatientID,BloodPressure,BloodSugar,Weight,Temperature,test_details,test_results)value('$vid','$bp','$bs','$weight','$temp','$test_details','$test_results')");
+    
+     if (!$query) {
+          printf("Error: %s\n", mysqli_error($con));
+          exit();
+      }
+      if ($query) {
     echo '<script>alert("Medicle history has been added.")</script>';
     echo "<script>window.location.href ='manage-patient.php'</script>";
   }

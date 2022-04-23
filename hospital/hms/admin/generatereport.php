@@ -3,13 +3,21 @@ ob_start();
  function fetch_data()  
  {  
       $output = '';  
-      $con = mysqli_connect("localhost:3399", "root", "", "hms");  
+      $con = mysqli_connect("localhost", "root", "", "hms");  
       $vid=$_GET['viewid'];
-      $ret=mysqli_query($con,"select bill.*,hospital_charges.Invoice_Number,hospital_charges.Room_Rent,hospital_charges.ICU_services,hospital_charges.Medicine_charges,hospital_charges.Other_Expenses,hospital_charges.Surgical_Appliances,hospital_charges.Patient_Paid_Amount,hospital_charges.Date FROM bill,hospital_charges where bill.PatientEmail=hospital_charges.PatientEmail AND bill.ID='$vid'");
-     $cnt=1;
+      //$ret=mysqli_query($con,"select tblmedicalhistory.*,tblpatient.*,hospital_charges.Invoice_Number,hospital_charges.Room_Rent,hospital_charges.ICU_services,hospital_charges.Medicine_charges,hospital_charges.Other_Expenses,hospital_charges.Surgical_Appliances,hospital_charges.Patient_Paid_Amount,hospital_charges.Date FROM tblpatient,hospital_charges where tblpatient.PatientEmail=hospital_charges.PatientEmail AND tblpatient.ID='$vid'");
 
+      $ret=mysqli_query($con,"select tblpatient.*,hospital_charges.Invoice_Number,hospital_charges.Room_Rent,hospital_charges.ICU_services,hospital_charges.Medicine_charges,hospital_charges.Other_Expenses,hospital_charges.Surgical_Appliances,hospital_charges.Patient_Paid_Amount,hospital_charges.Date FROM tblpatient,hospital_charges where tblpatient.PatientEmail=hospital_charges.PatientEmail AND tblpatient.ID='$vid'");
+     
+      $cnt=1;
+      if (!$ret) {
+          printf("Error: %s\n", mysqli_error($con));
+          exit();
+      }
+       $retMed=mysqli_query($con,"select * FROM tblmedicalhistory where PatientID='".$vid."' ");
       while($row = mysqli_fetch_array($ret))  
       {       
+        $rowMed=mysqli_fetch_array($retMed);
       $output .= '
        <body>
 <table style="width:100%">
@@ -77,14 +85,14 @@ ob_start();
 
 </tr>
 <?php  
-while ($row=mysqli_fetch_array($ret)) { 
+while ($rowMed=mysqli_fetch_array($retMed)) { 
   ?>
 <tr>
   <td width=10%>'.$cnt.'</td>
- <td width=20%>'.$row['BloodPressure'].'</td>
- <td width=20%>'.$row['Weight'].'</td>
- <td  width=20%>'.$row['BloodSugar'].'</td> 
-  <td width=30%>'.$row['Temperature'].'</td>
+ <td width=20%>'.$rowMed['BloodPressure'].'</td>
+ <td width=20%>'.$rowMed['Weight'].'</td>
+ <td  width=20%>'.$rowMed['BloodSugar'].'</td> 
+  <td width=30%>'.$rowMed['Temperature'].'</td>
   
   
 </tr>
@@ -100,12 +108,12 @@ while ($row=mysqli_fetch_array($ret)) {
 
   <tr>
     <th ><b>Medical Prescription:</b></th>
-    <td>'.$row['MedicalPres'].'</td>
+    <td>'.$rowMed['MedicalPres'].'</td>
   </tr>
 
   <tr>
    <th><b>Next Visit Date:</b></th>
-    <td>'.$row['Next_Visit_Date'].'</td> 
+    <td>'.$rowMed['Next_Visit_Date'].'</td> 
   </tr>
 
 

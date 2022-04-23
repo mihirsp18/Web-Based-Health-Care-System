@@ -1,4 +1,5 @@
 <?php
+ $vid=$_GET['viewid'];
 session_start();
 error_reporting(0);
 include('include/config.php');
@@ -7,7 +8,7 @@ check_login();
 if(isset($_POST['submit']))
   {
     
-    $vid=$_GET['vID'];
+    
     $bp=$_POST['bp'];
     $bs=$_POST['bs'];
     $weight=$_POST['weight'];
@@ -17,7 +18,12 @@ if(isset($_POST['submit']))
    
  
       $query.=mysqli_query($con, "insert into tblmedicalhistory(PatientID,BloodPressure,BloodSugar,Weight,Temperature,MedicalPres,Next_Visit_Date)value('$vid','$bp','$bs','$weight','$temp','$pres','$nvd')");
-    if ($query) {
+          if (!$query) {
+            printf("vid: %s\n",$vID);
+          printf("Error: %s\n", mysqli_error($con));
+          exit();
+      }
+      if ($query) {
     echo '<script>alert("Medicle history has been added.")</script>';
     echo "<script>window.location.href ='manage-patient.php'</script>";
   }
@@ -80,6 +86,7 @@ if(isset($_POST['submit']))
 <h5 class="over-title margin-bottom-15">Manage <span class="text-bold">Patients</span></h5>
 <?php
                                $vid=$_GET['viewid'];
+                               printf("ID: %s\n",$vid);
                                $ret=mysqli_query($con,"select * from tblpatient where ID='$vid'");
 $cnt=1;
 while ($row=mysqli_fetch_array($ret)) {

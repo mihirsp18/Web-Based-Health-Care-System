@@ -508,3 +508,60 @@ ALTER TABLE `staffspecilization`
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
+
+
+
+
+
+CREATE TABLE `hospital_charges` (
+  `id` int(11) NOT NULL,
+  `Invoice_Number` int(11) NOT NULL,
+  `PatientEmail` varchar(255) DEFAULT NULL,
+  `Room_Rent` varchar(255) DEFAULT NULL,
+  `ICU_services` varchar(255) DEFAULT NULL,
+  `Medicine_charges` varchar(255) DEFAULT NULL,
+  `Other_Expenses` varchar(255) DEFAULT NULL,
+  `Surgical_Appliances` varchar(255) DEFAULT NULL,
+  `Patient_Paid_Amount` varchar(255) DEFAULT NULL,
+  `Date` timestamp NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+ALTER TABLE `hospital_charges`
+  ADD PRIMARY KEY (`id`);
+
+ALTER TABLE `hospital_charges`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
+
+
+
+
+DROP TABLE `tblmedicalhistory` ;
+
+CREATE TABLE `tblmedicalhistory` (
+  `ID` int(10) NOT NULL,
+  `PatientID` int(10) DEFAULT NULL,
+  `BloodPressure` varchar(200) DEFAULT NULL,
+  `BloodSugar` varchar(200) NOT NULL,
+  `Weight` varchar(100) DEFAULT NULL,
+  `Temperature` varchar(200) DEFAULT NULL,
+  `MedicalPres` mediumtext DEFAULT NULL,
+  `test_details` varchar(1000) DEFAULT NULL,
+  `test_results` varchar(1000) DEFAULT NULL,
+  `CreationDate` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `Next_Visit_Date` timestamp NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+INSERT INTO `tblmedicalhistory` (`ID`, `PatientID`, `BloodPressure`, `BloodSugar`, `Weight`, `Temperature`, `MedicalPres`, `CreationDate`) VALUES
+(2, 3, '120/185', '80/120', '85 Kg', '101 degree', '#Fever, #BP high\r\n1.Paracetamol\r\n2.jocib tab\r\n', '2022-04-06 04:20:07'),
+(3, 2, '90/120', '92/190', '86 kg', '99 deg', '#Sugar High\r\n1.Petz 30', '2022-04-06 04:20:07'),
+(4, 1, '125/200', '86/120', '56 kg', '98 deg', '# blood pressure is high\r\n1.koil cipla', '2022-04-06 04:20:07'),
+(5, 1, '96/120', '98/120', '57 kg', '102 deg', '#Viral\r\n1.gjgjh-1Ml\r\n2.kjhuiy-2M', '2022-04-06 04:20:07'),
+(6, 4, '90/120', '120', '56', '98 F', '#blood sugar high\r\n#Asthma problem', '2022-04-06 04:20:07'),
+(7, 5, '80/120', '120', '85', '98.6', 'Rx\r\n\r\nAbc tab\r\nxyz Syrup', '2022-04-06 04:20:07');
+
+ALTER TABLE `tblmedicalhistory`
+  ADD PRIMARY KEY (`ID`);
+
+ALTER TABLE `tblmedicalhistory`
+  MODIFY `ID` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;

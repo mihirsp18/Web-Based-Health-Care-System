@@ -24,6 +24,9 @@ echo "<script>alert('Bill Info added Successfully');</script>";
 echo "<script>window.location.href ='add-bill.php'</script>";
 
 }
+else{
+	echo "<script>alert('somthing went wrong');</script>";	
+}
 }
 ?>
 <!DOCTYPE html>
